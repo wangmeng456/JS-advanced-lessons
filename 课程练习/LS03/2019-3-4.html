@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //toFixed(n)保留特定位数的小数
+        //超出特定位数的四舍五入，返回的是字符串
+        var num1 = 20;
+        num1.toFixed(2);
+
+        var num1 = 20;
+        var numobject = new Number(num1);
+        console.log(numobject.__proto__ == Number.prototype);
+        numobject.toFixed();
+
+
+        //toPrecision(数字位个数)，四舍五入
+        //数字位个数小于数字的整数位时，表示成指数形式
+        //大于或等于数字整数位时，直接四舍五入截取
+        var num2 = 12345.6789;
+        num2.toPrecision(1);
+
+
+        num2.toString();
+
+        //charAt（n）返回特定索引位置的字符
+        "abcde".charAt(2)//c
+
+
+        //formCharCode(97,98,99);
+        //将特定的unicode转换成字符
+        String.formCharCode(97,98,99);//abc
+
+        //charCodeAt(index)将特定索引位置的字符转换为unicode码输出
+        var str = "abcdefghi";
+        str.charCodeAt(0);//97
+
+        //slice(截取的起始位置，截取的结束位置)
+        //如果截取的结束位置小于0，实际结束位置为str.length+截取结束参数
+        str.slice(0, 3);//abc
+        str.slice(0, -1);//abcdefgh
+
+        //substr(截取的起始位置，截取的长度)
+        //截取长度可以缺省，表示从起始位置到字符串结束
+        str.substr(0, 3);//abc
+
+        //substring(截取起始位置，截取的结束位置)
+        //如果截取起始位置值 > 截取结束位置值，两者会互换位置
+        //超出 0 - str.length 范围的，会被截断
+        str.substring(0, 3);//abc
+        str.substring(3, 0);//abc
+        str.substring(1, -1);//a
+
+        //split(分隔符号，限定生成数组的长度)
+        var str1 = "abc*def*ghi";
+        str1.split("*");//["abc","def","ghi"]
+        str1.split("*",2);//["abc","def"]
+
+
+        //trim()去除起始和结束位置的字符
+        var str2 = "    ab    c      ";
+        str2.trim();//"ab    c"
+
+        //concat()拼接字符串
+        var str3 = "abc";
+        str3.concat("def","ghi");//abcdefghi
+
+        var str4 = "abcdefgbcd";
+        //indexOf(查找的特定字符，查找的起始位置)
+        //返回值是字符串出现的索引位置
+        //查找不到，返回值为-1
+        str4.indexOf("bcdy",0);//-1
+        //返回值是字符串最后出现的索引位置
+        str4.lastIndexOf("bcd");//7
+    </script>
+</body>
+</html>

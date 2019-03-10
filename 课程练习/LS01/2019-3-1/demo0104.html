@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //数组回顾
+        //字面量创建数组
+        var arr1 = [2,3,"a","b"];
+        console.log(arr1);//[2,3,"a","b"]
+
+        //访问与改变数组
+        console.log(arr1[2]);//a
+        console.log(arr1.length);//4
+        arr1.length-=1;
+        console.log(arr1);//[2,3,"a"]
+
+        //数组相关方法回顾
+        var arr2 = ['a','b','c'];
+        var arr3 = arr2.slice(1,2);//并不破坏arr2
+        // var arr3 = arr2.slice(1);
+        console.log(arr2);//['a','b','c']
+        console.log(arr3);//['b']
+
+        var arr4 = ['m','n'];
+        var pushReturn = arr4.push('o');
+        console.log(pushReturn);//3
+        //push后数组的长度
+        console.log(arr4);['m','n','o']
+
+        var popReturn =arr4.pop();
+        console.log(popReturn);//o
+        //pop出的元素
+        console.log(arr4);//['m','n']
+
+        var arr5 = [1,2,3,4];
+        var shiftReturn = arr5.shift();
+        console.log(shiftReturn);//1
+        //shift移除的元素
+        console.log(arr5);//[2,3,4]
+
+        var unshiftReturn = arr5.unshift(0);
+        console.log(unshiftReturn);//4
+        //unshift后数组的长度
+        console.log(arr5);//[0,2,3,4]
+
+        var arr6 = ["ab","cd","ef"];
+        console.log(arr6.indexOf("cd"));//1
+
+        var joinReturn1 = arr6.join();
+        console.log(joinReturn1);//ab,cd,ef
+
+        var joinReturn2 = arr6.join('-');
+        console.log(joinReturn2);//ab-cd-ef
+
+        //批量删除元素，破坏性操作
+        var arr7 = ["x","y","z"];
+        var arr8 = arr7.splice(1,1,"m");
+        console.log(arr7,arr8);//["x","m","z"]["y"]
+    </script>
+</body>
+</html>

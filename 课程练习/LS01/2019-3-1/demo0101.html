@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //基本语法回顾
+        var x;//变量声明 区分声明与定义（对比其他语言 JS的语言特点，动态类型、弱类型）语句
+        x = 23;//表达式作为语句时（赋值表达式语句）
+
+        //条件语句
+        if(x>22){
+            x+=2;
+        }else{
+            console.log("x 不大于 22");
+        }
+
+        var xx = 234;
+        if(234 == xx){
+            console.log("相等");//相等
+        }
+
+        console.log(a);//undefined
+        if(true){
+            var a = 2;
+        }
+        console.log(a);//2
+
+        console.log(b);//undefined
+        if(false){
+            var b = 3;
+        }
+        console.log(b);//undefined
+
+
+        //循环语句
+        for(var i=0;i<3;i++){
+            console.log("i:",i);//0 1 2
+        }
+        console.log(i);//3
+
+        //函数定义及调用
+        //function func1([参数]){
+        ///*函数体*/
+        //}
+        //var func2=function([参数]){
+        ///*函数体*/
+        //};
+        //var func3=function func4([参数]){
+        ///*函数体*/
+        //};
+        //var func5=new Function();
+        function max(x,y) {
+            return x>y?x:y;
+        }
+        console.log(max(2,3));//3
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        //基本类型：值的赋值
+        //值类型存储（栈区）
+        var num1 = 20;
+        var num2 = num1;
+        num1 = 10;
+        console.log(num2);//20
+
+
+        //引用类型：栈区指向堆区
+        //obj1与obj2指向相同
+        var obj1 = {"username" : "zhangsan"};
+        var obj2 = obj1;//浅拷贝（指向相同的对象）
+        obj2.username = "lisi";
+        console.log(obj1);//{"username" : "lisi"}
+
+        var arr1 = [1,2,3,4,5];
+        var arr2 = arr1;
+        arr2[0] = 6;
+        console.log(arr1);//[6,2,3,4,5]
+
+
+        var obj3 = {"username" : "zhangsan"};
+        var obj4 = {};
+        for(var i in obj3){
+            username = obj3.username;
+            obj4.username = username;//深拷贝：把值取出，生成一个新的对象（没有关联，对象里的值相同）
+        }
+
+
+        //==判断的是两边变量的值
+        //===判断的是类型还有变量值
+        var num3 = 10;
+        var num4 = 10;
+        console.log(num3 == num4);//true
+
+        //如果是引用类型，判断的是指向的内存空间否相同
+        var obj5 = {};
+        var obj6 = {};
+        console.log(obj5 == obj6);//false
+
+
+        var a = 6;
+        function fn1(x){
+            x = 5;
+        }
+        fn1(a);//6
+
+        var obj7 = {"username" : "zhangsan"};
+        function fn1(x){
+            x.username = "lisi";
+        }
+        fn1(obj7);//{"username" : "lisi"}
+
+
+        //isNaN:不是一个数字类型
+        var x = 20;
+        console.log(isNaN(x));//false
+
+        //slice:截取字符串
+        //str.slice(截取字符串起始位置,截取字符串的结束位置+1)
+        //负数可以从反方向计算索引或者字符串的长度加上该负数
+        var str = "ab_cd_ef";
+        str.slice(0,3);//ab_
+        str.slice(0,-1);//ab_cd_e
+
+        //split:把字符串转换成数组
+        //str.split("分隔符")以特定的分隔符来进行分割字符串，
+        //将子串作为数组的数组元素，生成一个数组
+        str.split("_");//["ab","cd","ef"]
+
+
+        //包装对象
+        var str0 = "abcdef";
+        console.log(str0.length);
+
+        var str0 = "abcdef";
+        var strObject = new String(str0);
+        console.log(strObject.length);
+
+
+        //+value:true+1(value是数字那么“true+1”为Number类型)
+        //转换成Number类型中如果包含非数字字符全部转换成NaN
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        /*函数调用方式*/
+
+        //非严格模式下
+        function test(){
+            console.log(this);
+        }
+        test();//window
+
+        //严格模式下
+        'use strict'
+        function test(){
+            console.log(this);
+            return 1;
+        }
+        test();//undefined
+
+        //对象内部，this指向调用该方法的对象
+        var obj = {
+            x: 0,
+            test:function(){
+                console.log(this.x);
+            }
+        }
+        obj.test();//0
+
+        var objA = {"objName": "AAA"};
+        var objB = {"objName": "BBB"};
+        objA.test = function(){
+            console.log(this.objName);
+        }
+        objA.test();//AAA
+        //方法.call(对象)
+        //将方法的调用执行从原有对象切换成当前对象
+        objA.test.call(objB);//BBB
+
+        function Person(username){
+            this.username = username;
+            //this.sayHi = function(){
+            //    console.log(this.username);
+            //}
+        }
+        Person.prototype.sayHi = function(){
+            console.log(this.username);
+        }
+        var person = new Person("zhangsan");
+        var person1 = new Person("lisi");
+        consloe.log(person, person1);
+    </script>
+</body>
+</html>

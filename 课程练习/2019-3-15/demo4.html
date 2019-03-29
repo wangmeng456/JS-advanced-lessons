@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        /*参数类型*/
+
+        //实参为基本数据类型
+        var a = 1;
+        function test(x) {
+            x = 2;
+            console.log(x, a);//2 1
+        }
+        test(a);
+
+        var obj = {x: 0};
+        function bar(obj1) {
+            obj1.x = 2;
+            console.log(obj, obj1);//2 2
+        }
+        bar(obj);
+
+        //定义一个函数，传入一个参数，完成对参数的复制处理，生成一个新的变量并返回
+        //参数类型 string boolean number 数组
+        function copyArg(arg1) {
+            var copy;
+            switch(true) {
+                case (arg1 instanceof String):
+                case (arg1 instanceof Number):
+                case (arg1 instanceof Boolean):
+                    copy = arg1;
+                    break;
+                case (arg1 instanceof Array):
+                    copy = [];
+                    for(i = 0; i < arg1.length; i++) {
+                        copy[i] = arg1[i];
+                    }
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

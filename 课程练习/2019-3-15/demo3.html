@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        /*函数调用参数的数量*/
+
+        //实参数量小于形参数量
+        function sum(x, y, z) {
+            console.log(z);
+            return x + y + z;
+        }
+        sum(1, 2);
+
+        //实参数量大于形参
+        //可以使用arguments获取实参
+        //arguments类数组结构
+        function test(a) {
+            //console.log(arguments);
+            var s = "";
+            for(var i = 0; i < arguments.length; i++) {
+                s += arguments[i];
+            }
+            return s;
+        }
+        test("hello", " world", " !", " nice to meet you");
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    /*非期望的变量共享问题及解决办法*/
+
+
+    //1、函数的作用域，在定义的时候就是确定
+    //2、函数内部的变量，有些时候需要等到函数的执行来确定
+    function fn1() {
+        var arr1 = [];
+        for(var i = 0; i <10; i++) {
+
+            (functon(j) {
+                arr1[j] = function() {
+                    return j;
+                }
+            })(i)//每次循环时会定义一个匿名函数,返回i的值
+
+            //arr1[i] = function() {
+            //    return i;
+            //}
+        }
+        //(function() {
+        //    arr1[j] = function() {
+        //        return j;
+        //    }
+        //})(0)
+
+        //var i;
+        //arr[0] = function() {
+        //    return i;
+        //}
+        //...
+        //arr[9] = function() {
+        //    return i;
+        //}
+        return arr1;
+    }
+    var result = fn1();
+    result[0]();//得到return的i值 10
+</script>
+</html>

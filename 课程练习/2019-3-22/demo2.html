@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    /*JS预解析（声明提升）*/
+
+
+    //全局作用域来提升
+    console.log(a);//1
+    var a = 1;
+
+    function fn1() {
+        //函数内部解析，在函数作用域范围内，对变量进行提升
+        console.log(b);//undefined
+        var b = 2;
+    }
+    console.log(b);//undefined
+
+    //函数声明实例
+    function fn2() {
+        fn3();
+        function fn3() {
+            console.log("hello world");
+        }
+    }
+    fn2();//hello world
+    //fn3(); 在fn2的作用域范围之内，不能在外部调用
+</script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    /*JS作用域及其特点*/
+
+
+    var a = 1;
+    var b = 2;//全局变量
+    function fn1() {
+        var b = 3;//限定变量的作用域对全局变量不产生影响
+        //b = 3; 没有var的变量始终操纵的是 var b = 2；把b的值改变了，相当于赋值
+        var d = 4;
+        console.log(b);//3
+        function fn2() {
+            b = 5;
+            var e = 6;
+        }
+        fn2();
+    }
+    fn1();
+    console.log(b);//2
+
+    //JS作用域的特点（词法作用域）
+    //作用域的静态性，只要完成函数的定义，那变量的作用域就是确定的
+    //和函数在哪里调用没有关系
+    var username = "jack";
+    function foo() {
+        console.log(username);//jack
+    }
+    function bar() {
+        var username = "bill";
+        foo();
+    }
+    bar();
+
+
+    //JS作用域及其特点（关于块作用域）
+
+    //变量污染
+    var userId = 2;
+    document.onclick = function() {
+        console.log(userId);
+    };
+    //很长一段代码
+    //if(true) {
+    //    var userId = 20;//变量覆盖，变量污染问题
+    //}
+    (function() {
+        if(true) {
+            var userId = 20;
+        }
+    })()//立即执行函数，避免全局变量的污染
+
+    //变量的非期望共享
+    for(var i = 0; i < 3; i++) {
+        setTimeout(function() {
+            console.log(new Date(), i);
+        }, i*1000)
+    }
+
+    //ES6定义块级作用域的方式
+    if(true) {
+        let a = 1;//let与var对应
+        console.log(a);//1
+    }
+    //console.log(a);//报错,let只能在花括号内起作用
+</script>
+</html>

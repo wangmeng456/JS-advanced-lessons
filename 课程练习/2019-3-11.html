@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var obj = {"username":"zhangsan","age":20};
+    obj._proto_.sex = "male";
+    console.log(obj);
+    //for in遍历的对象是对象的所有可枚举属性
+    for(var i in obj){
+        console.log("键名" + i);
+        //obj[变量]
+        console.log("键值" + obj[i]);
+    }
+
+    //不建议使用for in 来遍历数组
+    var arr1 = [1,2,3];
+    console.log(Object(arr1));
+    for(var j in arr1){
+        console.log(j);
+    }
+
+
+    var a = 45;
+    //if(a = 54){
+    //    console.log("判断相等");//a又赋值成了54
+    //}
+    //发反写，字面量在前，变量在后，避免判等时写成赋值号
+    if(45 == a){
+        console.log("判断相等");
+    }
+
+
+    var x = "1";
+    //++x 表示先运算，再输出
+    //x++ 表示先输出，再运算
+    //++ --自动完成数据类型的隐式转化，转化为数字类型
+    //console.log(++x);//2
+    console.log(x++);//1
+    console.log(x);//2
+    //+= 不会进行类型的转化
+    console.log(x +=1);
+
+
+    //左真取右
+    console.log(10 && 0);
+    //左假取左
+    console.log(undefined && 10);
+
+    //左真取左
+    console.log(10 || null);
+    //左假取右
+    console.log(null || 10);
+
+
+    //var score = 76;
+    //if(score > 90){
+    //    console.log("优");
+    //}
+    //else if(score > 75){
+    //    console.log("良");
+    //}
+    //else if(score > 60){
+    //    console.log("及格");
+    //}
+    //else{
+    //    console.log("不及格");
+    //}
+    var score = 78;
+    console.log((score > 90 && "优") || (score >75 && "良"));
+    switch(true){
+        case score>90:
+            console.log("优");
+            break;
+        case score>75:
+            console.log("良");
+            break;
+        case score>60:
+            console.log("及格");
+            break;
+        default: 
+            console.log("不及格");
+    }
+
+
+    //function sum(x,y,z){
+    //    x = x;
+    //    y = y;
+    //    z = z;
+    //    return x + y + z;
+    //}
+    //console.log(sum());
+
+    // || 如果不等于false，取默认值
+    function sum(x,y,z){
+        x = x || 1;
+        y = y || 2;
+        z = z || 3;
+        return x + y + z;
+    }
+    console.log(sum());//6
+
+    //ES6中实现设置函数参数的默认值
+    function sum1(x = 1, y = 2, z = 3){
+        return x + y + z;
+    }
+    //sum1();//6
+    sum1(4,5,6);//15
+</script>
+</html>

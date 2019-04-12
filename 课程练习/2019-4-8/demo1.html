@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var obj = {
+        num: 10,
+        str: "hello",
+        show: function() {
+            console.log(this.str);
+        }
+    }
+    //Object.create(obj);
+    //创建一个新对象，并且将obj对象作为新对象的_proto_
+    var subObject = Object.create(obj);
+    console.log(subObject._proto_ == obj);
+    console.log(subObject);
+    console.log(subObject.num);
+</script>
+</html>

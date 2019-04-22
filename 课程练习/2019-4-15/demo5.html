@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        立即执行函数：
+        1.防止变量的污染
+        2.防止变量的非期望共享
+    */
+
+    (function() {
+
+    })()
+
+    for(var i = 0; i < 5; i++) {
+        /*
+            1.事件的绑定的回调函数
+            2.定时执行、延迟执行
+        */
+        //每次循环形成自己的独立作用域
+        (function(j) {
+            console.log(j)
+        })(i)
+    }
+
+
+    /*
+        闭包：
+        1.可以访问函数内部的局部变量
+        2.可以让变量保持在内存中
+    */
+
+    function fn1() {
+        var x = 1;
+        function fn2() {
+            return ++x;
+        }
+        return fn2();
+    }
+    var result = fn1();
+
+
+    /*
+        对象：
+    */
+    var obj = {x: 1};
+    for(var i in obj) {
+        console.log(obj[i]);
+    }
+
+    Object.defineProperty(obj, "y", {
+        value: 2,
+        writable: true,
+        enumerable: true,
+        configurable: true
+    });
+
+    /*
+        直接定义在object上的
+        Object.create()
+        Object.defineProperty()
+        Object.defineProperties()
+        Object.assign()
+        Object.getOwnPropertyDescriptor()
+
+        直接定义在object.prototype上的
+    */
+</script>
+</html>

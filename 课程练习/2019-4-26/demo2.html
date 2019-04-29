@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    /*构造函数实现的对象-对象的原型继承的原型共享问题*/
+
+    function Person(name) {
+        this.name = name;
+    }
+    Person.prototype.age = 22;
+    Person.prototype.showName = function() {
+        console.log(this.name);
+    }
+
+    function Student(id) {
+        this.id = id;
+    }
+
+    var person = new Person("Mike")
+    Student.prototype = person;
+    var s1 = new Student(2017001);
+    var s2 = new Student(2017002);
+
+    console.log(s1.id, s2.id);
+    //构造函数Student
+
+    console.log(s1.name, s2.name);
+    //原型对象上找
+    /*
+        s1.name
+        s1.__proto__ == Student.prototype
+        Student.prototype == person
+    */
+
+    console.log(s1.age, s2.age);
+    /*
+    s1.age
+    s1.__proto__ == Student.prototype
+    Student.prototype == person
+
+    person.__proto__ == Person.prototype
+
+    s1.__proto__.__proto__ == Person.prototype
+    */
+
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var reg1 = /\da/gi;
+    var reg2 = new RegExp(/\da/,"gi");
+    var reg3 = new RegExp('\da',"gi");
+
+    /*
+        字符分类
+            \d 表示阿拉伯数字 [0-9]
+            \D 表示不是阿拉伯数字
+
+            \s 表示空格
+
+            \w 表示 [A-Za-z0-9_]
+
+            . 表示任意的单个字符，行结束符除外
+
+        字符集合
+            [abcdef] 从中括号集合中任取一个字符
+            [^abcdef] 排除中括号内的字符的任意一个字符
+            
+        字符边界
+            ^a 表示以特定字符开头
+            b$ 表示以特定字符结尾
+
+        数量词
+            a* 表示匹配前面的字符0次或多次
+            a+ 表示匹配前面的字符1次或多次
+            a? 表示匹配前面的字符0次或1次
+            a{n} 表示匹配前面的字符n次
+            a{m,n} 表示至少匹配前面的字符m次，至多匹配n次
+            a{m, } 表示至少匹配前面的字符m次
+            x|y 表示匹配x或者y
+    */
+</script>
+</html>

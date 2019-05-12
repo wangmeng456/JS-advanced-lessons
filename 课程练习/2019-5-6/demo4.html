@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        字符的集合
+    */
+    var reg1 = /[abc]\d/gi;
+    var str1 = "a1b2c3d4dfdfdfd";
+    str1.replace(reg1, "x");//"xxxd4dfdfdfd"
+
+    var reg2 = /[abc][0-9]/gi;
+    var str2 = "a1b2c3d4e5";
+    str2.replace(reg2, "x");//"xxxd4e5"
+
+    var reg3 = /[^0-9]/gi;//不取0-9
+    var str3 = "1a2b3c";
+    str3.replace(reg3, "x");//"1x2x3x"
+
+    /*
+        匹配开头字符是数字 第二个字符是a-f 第三个字符是空格
+    */
+    var reg4 = /\d[a-f]\s/gi;
+    var str4 = "1a 5g ab cd 5y   ";
+    str4.replace(reg4, "x");//"x5g ab cd 5y   "
+</script>
+</html>

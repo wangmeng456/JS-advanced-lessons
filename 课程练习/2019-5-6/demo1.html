@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        正则表达式的结构:
+            /正则表达式文本/标识符
+    */
+    /*
+        [xyz] 从括号中的字符中选任意一个
+        i标识符：是否忽略大小写（加上i就忽略，不加i就不忽略）
+        g标识符：是否全局检索
+    */
+    var reg1 = /[bcf]at/gi;/*字面量定义*///匹配bat或cat或fat
+    var reg2 = new RegExp(/[bcf]at/, "gi");
+    var reg3 = new RegExp("/[bcf]at/", "gi");
+    var str = "bat cat fat Fat difigfi";
+    str.match(reg1);
+</script>
+</html>

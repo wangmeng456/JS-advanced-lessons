@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        字符分类：
+
+        \d：匹配阿拉伯数字 [0-9]
+        \D：不是一个阿拉伯数字 [0-9]
+
+        \w：匹配所有的字母，数字，下划线[A-Za-z0-9_]
+        \W：不是字母，数字，下划线
+
+        \s：匹配的是空格，空格可以是space可以是制表符
+        \S：不是空格
+    */
+    var reg1 = /a\d/gi;
+    var str1 = "a1bcda2kee";
+    str1.replace(reg1, "x");//"xbcdxkee"
+
+    var reg2 = /a\D/gi;
+    var str2 = "a1aba2ac";
+    str2.replace(reg2, "x");//"a1xa2x"
+
+    var reg3 = /a\w/gi;
+    var str3 = "a1aba2ac_";
+    str3.replace(reg3, "x");//"xxxx_"
+
+    var reg4 = /\sa\d/gi;
+    var str4 = " a1 a3a4a5";
+    str4.replace(reg4, "x");//"xxa4a5"
+</script>
+</html>

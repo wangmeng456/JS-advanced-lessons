@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        arr.every(callback)
+        测试数组的数组元素执行回调函数的结果，如果有返回值为false的则result为false，如果均为true则result为true
+    */
+    var arr1 = [10, 20, 30, 40];
+    var result = arr1.every(function(value) {
+        return value > 20;
+    });
+    console.log(result);//false
+
+    /*
+        arr.some(callback)
+        只要某些数组元素满足条件，返回值即为true
+        如果全部都不满足，返回值为false
+    */
+    var result1 = arr1.some(function(value) {
+        return value > 30;
+    });
+    console.log(result1);//true
+
+    /*
+        arr.map(callback)
+        对原数组进行操作，得到一个新的数组
+    */
+    var result2 = arr1.map(function(value) {
+        return value * 2;
+    });
+    console.log(result2);//[20, 40, 60, 80]
+
+    /*
+        arr.filter(callback)
+        生成新的数组，并且数组元素满足特定的过滤条件
+    */
+    var result3 = arr1.filter(function(value) {
+        return value >= 20;
+    });
+    console.log(result3);//[20, 30, 40]
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        用小括号包裹的规则内容，称之为分组
+    */
+    var reg1 = /(ss\d)a(\dxx)/gi;
+    var str1 = "ss1abcdefg";
+    /*
+        reg.exec(str)
+        如果可以匹配的，返回数组
+        如果不能匹配的，返回null
+            返回的数组结构
+            [整个正则匹配到的内容，分组匹配到的内容]
+    */
+    reg1.exec(str1);
+</script>
+</html>

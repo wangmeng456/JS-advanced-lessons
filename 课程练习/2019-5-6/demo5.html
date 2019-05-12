@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        ^m 以m开头的字符串
+        n$ 以n结尾的字符串
+    */
+
+    /*^以某个特定的字符开头*/
+    var reg1 = /^a\d/gi;
+    var str1 = "a1fdfdfgkdjfkd";
+    str1.replace(reg1, "x");//"xfdfdfgkdjfkd"
+
+    /*$以某个特定的字符结尾*/
+    var reg2 = /a\d$/gi;
+    var str2 = "fdfdnjfdjfna2";
+    str2.replace(reg2, "x");//"fdfdnjfdjfnx"
+</script>
+</html>

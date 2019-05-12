@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        new Date(年份, 月份, 日, 时, 分, 秒, 毫秒);
+    */
+    var date1 = new Date("2019", "05", "05");
+    console.log(date1);//Wed Jun 05 2019 00:00:00 GMT+0800 (中国标准时间)
+
+    /*
+        new Date(时间格式字符串);
+    */
+    var date2 = new Date("2019-05-05");
+    console.log(date2);//Sun May 05 2019 08:00:00 GMT+0800 (中国标准时间)
+
+    /*
+        日期到相应时刻的毫秒数
+    */
+    var millionSeconds = Date.now();
+    var date3 = new Date(millionSeconds);
+    console.log(date3);//Sun May 05 2019 10:49:57 GMT+0800 (中国标准时间)
+</script>
+</html>

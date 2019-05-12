@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        时间分类：
+            当地时间
+            世界标准时间 UTC GMT
+    */
+   var millionSeconds = Date.parse("2019-05-05");//转成毫秒，从1970年1月1日 00:00:00开始计算
+   var next = millionSeconds + 86400000;
+   console.log(millionSeconds);//1557014400000
+   var date1 = new Date(next);
+   console.log(date1);//Mon May 06 2019 08:00:00 GMT+0800 (中国标准时间)
+</script>
+</html>

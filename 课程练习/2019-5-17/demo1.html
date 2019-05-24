@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table width="400" height="400" border="1" align="center">
+        <tr class="odd">
+            <td id="#td1"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="even">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="odd">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="even">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    /*
+        过滤选择器
+    */
+
+    $("td:first").css("background", "red");//第一个td元素
+    $("td:last").css("background", "green");//最后一个td元素
+    $("td:even").css("background", "blue");//所有偶数td元素
+    $("td:odd").css("background", "purple");//所有奇数td元素
+
+    /*
+        $("td:eq(索引值)") 选中特定索引值的元素
+        $("td:gt(索引值)") 选中索引值大于特定索引的元素
+        $("td:not(#标签)") 排除特定标签的元素
+    */
+    var index = 5;
+    $("td:eq("+ index +")").css("background", "yellow");//索引值等于5的所有元素
+    $("td:gt(1)").css("background", "pink");//索引值大于1的所有元素
+    $("td:lt(1)").css("background", "black");//索引值小于1的所有元素
+    $("td:not(#td1)").css("background", "white")//排除td1的元素
+</script>
+</html>

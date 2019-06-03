@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        存在函数嵌套，this指向不正确时，解决方案：
+        1、通过that转存
+        2、bind绑定
+        3、apply call
+        4、箭头函数(回调函数中)
+    */
+    var obj = {
+        objName: "obj1",
+        showName: function() {
+            // var that = this;
+            setTimeout(() => {
+                console.log(that.objName);
+            }, 3000);
+        }
+    }
+    obj.showName();
+</script>
+</html>

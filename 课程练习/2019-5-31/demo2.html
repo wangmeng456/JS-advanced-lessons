@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function move2({x,y} = {x:0, y:0}) {
+        return[x, y];
+    }
+
+    /*
+        函数参数的对象解构赋值，
+        适用于函数参数较多，解构较复杂的情况
+    */
+    console.log(move2({y:2, x:1}));//[1, 2]
+    console.log(move2());//[0, 0]
+    console.log(move2({}));//[undefined, undefined]
+</script>
+</html>

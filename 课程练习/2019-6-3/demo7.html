@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        剩余操作
+        可以接收剩下的所有实参
+        必须放在参数的最后位置上
+
+        剩余操作符对应变量最后得到一个数组
+    */
+    function fn1(x, z, ...y) {
+        console.log(x, z, y);
+    }
+    fn1(1, 2, 3, 4, 5);
+
+    /*
+        扩展操作符
+        将数组转化为以,分割的参数结构
+        是剩余操作符的逆操作
+    */
+    function fn2(a, b, c, d, e, f) {
+        console.log(a, b, c, d, e, f);
+        console.log(arguments);
+    }
+    fn2(1, ...[2, 3, 4, 5]);
+</script>
+</html>

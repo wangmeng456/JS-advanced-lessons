@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        进行两侧的模式匹配，然后完成对应位置上的变量赋值
+    */
+    let[first, second, third] = ["bar", "foo", "baz"];
+    console.log(first, second, third);
+
+    /*
+        ...剩余运算符
+    */
+    let [head, ...tail] = [1, 2, 3, 4];
+    console.log(head, tail);
+
+    /*
+        根据键名匹配变量，将键值赋值给对应变量
+    */
+    let {foo2, bar2} = {bar2: "bar2", foo2: "foo2"};
+    console.log(foo2, bar2);
+    /*
+        如果两侧均为键值对的形式，键名仅仅是用来匹配
+        键值会赋值给键值位置变量
+    */
+    let {k1: v1, k2: v2} = {k1: "aaa", k2: "bbb"};
+    console.log(v1, v2);
+
+    /*
+        如果等号的右侧不是一个对象时，会转化成对象
+    */
+    let [a, b, c, d] = "hello";
+    console.log(a, b, c);
+
+
+    // let {toString: s} = 123;
+    // console.log(s);
+
+    let num = new Number(123);
+    let {toString: s} = num;
+    console.log(s == Number.prototype.toString);
+</script>
+</html>

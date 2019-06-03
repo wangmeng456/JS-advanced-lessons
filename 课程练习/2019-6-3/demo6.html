@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        1、带有默认值的参数默认是声明的，在函数内部不能再重复定义
+        2、带有默认值的参数需要写到没有默认值的参数后面
+    */
+    function fn1(x, y = 2, z = 3) {
+        return x + y + z;
+    }
+    fn1(1);
+    fn1(1, 4);
+    fn1(1, 4, 6);
+</script>
+</html>

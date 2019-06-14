@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 传统方式
+    // function Point(x, y) {
+    //     this.x = x;
+    //     this.y = y;
+    // }
+    // Point.prototype.show = function() {
+    //     console.log(this.x);
+    // }
+
+    // let p1 = new Point(1, 2);
+
+    class Point {
+        constructor(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+        show() {
+            console.log(this.x);
+        }
+        showY() {
+            console.log(this.y);
+        }
+    }
+    console.log(typeof Point);
+
+    let p = new Point(1, 2);
+    let p1 = new Point(3, 4);
+    console.log(p.__proto__ == p1.__proto__);
+    console.log(p.__proto__ == Point.__proto__);
+    p.show();
+</script>
+</html>

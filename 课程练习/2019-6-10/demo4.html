@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let m1 = new Map();
+    let o = {"x": 1};
+    m1.set(o, 2);//添加键值对
+    m1.get(o);
+    m1.has(o);
+    m1.delete(o);//删除键值对
+
+    console.log(m1);
+    for(let i of m1) {
+        console.log(i);
+    }
+</script>
+</html>

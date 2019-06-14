@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let s1 = Symbol("s1");
+    let obj = {};
+    obj[s1] = "hello";//变量作属性时，加上中括号
+
+    let obj1 = {
+        [s1]: "world"
+    };
+
+    let obj2 = {};
+    let s2 = Symbol("s2");
+    Object.defineProperty(obj2, s2, {value: 2});
+
+    Object.getOwnPropertySymbols(obj2);//得到对象里定义的Symbol属性
+
+    let f1 = Symbol("f1");
+    console.log(Symbol.for("f1") == f1);//false
+    console.log(Symbol.for("f1") == Symbol.for("f1"));//true
+</script>
+</html>
